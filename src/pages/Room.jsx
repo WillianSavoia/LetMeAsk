@@ -60,10 +60,7 @@ export function Room() {
     }
     
      async  function handleEndRoom(){
-        await database.ref(`rooms/${id}`).update({
-            endedAt: new Date(),
-        })
-
+      =
         navigate('/')
     }
     
