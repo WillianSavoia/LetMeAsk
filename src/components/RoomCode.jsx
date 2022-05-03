@@ -8,11 +8,17 @@ import '../styles/RoomCode.scss';
 
 export function RoomCode(){
     
-    const {id} = useParams(`${id}`);
+    const {id} = useParams();
+    
+    function copyRoomCodeToClipboard() {
+      navigator.clipboard.writeText(`${id}`);
+    }
+
     
     return(
-       
-        <button className="room-code">
+   
+      
+        <button className="room-code" onClick={copyRoomCodeToClipboard}>
             <div>
             
                 <img src={copyImg} alt="Copy room code" />
@@ -22,6 +28,3 @@ export function RoomCode(){
        
     )
 }
-
-
-//Resolver problema de copiar e colar!!!
