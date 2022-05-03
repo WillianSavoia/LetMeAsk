@@ -59,13 +59,24 @@ export function Room() {
         }
     }
     
+     async  function handleEndRoom(){
+        await database.ref(`rooms/${id}`).update({
+            endedAt: new Date(),
+        })
+
+        navigate('/')
+    }
+    
     
     return(
         <div id="page-room">
             <header>
                 <div className="content">
                     <img src={logoImg} alt="letmeask" />
+                    <div>
                     <RoomCode />
+                    <button className="Enter"type="submit" onClick={handleEndRoom}>Sair da sala</button>
+                    </div>
                 </div>
             </header>
             <main className="content">
