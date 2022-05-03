@@ -8,7 +8,7 @@ import '../styles/RoomCode.scss';
 
 export function RoomCode(){
     
-    const {id} = useParams();
+    const {id} = useParams(`${id}`);
     
     return(
        
